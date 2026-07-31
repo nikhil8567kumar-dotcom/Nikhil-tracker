@@ -269,8 +269,8 @@ body{background:var(--bg);color:var(--w);font-family:system-ui,sans-serif;min-he
   </div>
   <div class="muted" style="text-align:center;line-height:1.8;margin-top:14px;padding:0 10px;">
     Every day you hold is a win.<br>
-    Under 5 days → relapse = <span class="red">-500 EXP</span><br>
-    5+ days → relapse = only <span class="yellow">-100 EXP</span>
+    Under 5 days → relapse = <span class="red">-1100 EXP</span><br>
+    5+ days → relapse = only <span class="yellow">-200 EXP</span>
   </div>
 </div>
 
@@ -678,7 +678,7 @@ function showPmoConfirm(){
 function closePmoConfirm(){document.getElementById('pmoOverlay').classList.remove('show');}
 function confirmRelapse(){
   const cur=store.pmo?.days||0;
-  const penalty=cur<5?500:100;
+  const penalty=cur<5?1100:200;
   store.pmo.resets=(store.pmo.resets||0)+1;
   if(cur>(store.pmo.best||0))store.pmo.best=cur;
   store.pmo.days=0;
